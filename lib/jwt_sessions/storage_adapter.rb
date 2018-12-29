@@ -53,7 +53,7 @@ module JWTSessions
                   raise Errors::Error, "non-Hash value is not supported by storage - #{old_val}.is_a #{old_val.class}, retry with Hash"
                 else
                   payload
-                end#.map{|k,v| v='' if v.nil?}
+                end
       _storage.store('meta_keys', { key => key }, expires: 0)
       _storage.store(key, new_val, expires: opts[:expires])
     end
